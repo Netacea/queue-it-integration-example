@@ -1,0 +1,10 @@
+{
+  "apiKey": "",
+  "secretKey": "=",
+  "mitigationType": "MITIGATE",
+  "cookieEncryptionKey": "",
+  "netaceaCookieName": "_coolCookie",
+  "netaceaCaptchaCookieName": "_captcha",
+  "enableDynamicCaptchaContentType": false,
+  "timeout": 3000
+}

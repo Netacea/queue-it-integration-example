@@ -1,0 +1,11 @@
+name = "queue-it-netacea-worker"
+main = "./dist/worker.js"
+
+account_id = "id"
+route = "route"
+
+compatibility_date = "2023-07-24"
+
+kv_namespaces = [
+  { binding = "IntegrationConfigKV", id = "id", preview_id = "preview_id" }
+]

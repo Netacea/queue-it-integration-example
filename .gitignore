@@ -105,3 +105,6 @@ dist
 
 worker/
 dist/
+
+**/NetaceaConfig.json
+wrangler.toml
