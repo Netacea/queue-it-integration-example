@@ -1,7 +1,7 @@
 {
-  "name": "@netacea/cloudflare-worker-template-typescript",
+  "name": "queue-it-poc-cloudflare-worker",
   "version": "1.0.0",
-  "description": "A simple Cloudflare worker with Netacea built in.",
+  "description": "A Netacea Cloudflare worker with Queue-It integration.",
   "main": "./dist/index.js",
   "scripts": {
     "build": "webpack",
@@ -13,25 +13,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Netacea/cloudflare-worker-template-typescript.git"
+    "url": "git+https://github.com/Netacea/queue-it-poc-cloudflare-worker.git"
   },
   "keywords": [
     "netacea",
-    "cloudflare",
-    "wrangler"
+    "queue-it",
+    "cloudflare"
   ],
-  "author": "Jack Scotson <jack.scotson@netacea.com> (https://netacea.com)",
-  "contributors": [
-    "Gracjan Pietruszyński <gracjan.pietruszynski@netacea.com> (https://netacea.com)"
-  ],
-  "maintainers": [
-    "Gracjan Pietruszyński <gracjan.pietruszynski@netacea.com> (https://netacea.com)"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Netacea/cloudflare-worker-template-typescript/issues"
-  },
-  "homepage": "https://github.com/Netacea/cloudflare-worker-template-typescript#readme",
+  "author": "Gracjan Pietruszynski <gracjan.pietruszynski@netacea.com> (https://www.netacea.com)",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/Netacea/queue-it-poc-cloudflare-worker#readme",
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20230511.0",
     "@types/service-worker-mock": "^2.0.1",

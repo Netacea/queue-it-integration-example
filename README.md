@@ -1,56 +1,30 @@
-# Netacea Cloudflare Worker Template
-![Netacea Header](https://assets.ntcacdn.net/header.jpg)
-[![TypeScript](https://img.shields.io/badge/%3C%2F%3E-TypeScript-%230074c1.svg)](http://www.typescriptlang.org/)
+# Queue-It POC Cloudflare Worker
 
-A simple Cloudflare worker with Netacea built in.
+This repository contains an example integration of Netacea's bot detection with Queue-It's KnownUser V4 package.
+It is currently deployed in [https://queue.netacea-int.co.uk/](https://queue.netacea-int.co.uk/).
 
-## 💡 Getting Started
+## Installation
 
-This template is meant to be used with [Wrangler](https://developers.cloudflare.com/workers/wrangler/). If you are not already familiar with the tool, we recommend that you install the tool and configure it to work with your [Cloudflare account](https://dash.cloudflare.com).
+To install all dependecies, run `npm ci` in the root level of this repository. Afterwards move to `src/connector-cloudflare-4.1.1`, and run `npm ci` once more to install KnownUser V4 dependencies.
 
-Node version `16.13.0` or later and npm version `9` or later is required.
+## Configuration
 
-To generate using Wrangler, run this command:
+Copy `wrangler.toml.exmple` into `wrangler.toml` and edit `account_id`, `route`, and `IntegrationConfigKV` binding IDs as necessary.
+After that, copy `NetaceaConfig.example.json` into `NetaceaConfig.json`, and replace example config values as needed.
 
-```bash
-wrangler generate netacea-cloudflare-worker https://github.com/netacea/cloudflare-worker-template-typescript
-```
+## Deployment
 
-Ensure the `@netacea/cloudflare` package is up to date by running:
-```bash
-npm i @netacea/cloudflare@latest
-```
-- Ensure you are [logged into Wrangler](https://developers.cloudflare.com/workers/wrangler/commands/#login).
-- Insert your wrangler credentials into the `wrangler.toml` file in the root directory (you only need to change `account_id`, `route`, and `compatibility_date` - the rest is okay).
+To deploy the worker, run `npm run publish` in the root directory. Configuration must be completed for deployment to succeed.
 
-## ⚠️ Configuration
+## Useful resources
 
-Configuration of the integration can be performed in the `NetaceaConfig.json` file, in the `./src` directory.
-Here you can find several parameters which need to be properly configured:
+Below is a list of useful resources gathered during creation of this integration:
 
-  - `apiKey` - the API key for your domain. Provided by Netacea. Used to communicate with the Mitigation and Ingest APIs.
-  - `secretKey` - the Secret key for your domain. Provided by Netacea. Used to check the authenticity of cookies.
-  - `mitigationType` - either "INGEST" or "MITIGATE" to disable / enable mitigation, respectively.
-  - `cookieEncryptionKey` - used to encrypt cookie data. Can be provided by either the customer, or Netacea.
-  - `netaceaCookieName` - name of the Netacea cookie. Name should set so as not to conflict with existing cookies on site.
-  - `netaceaCaptchaCookieName` - name of the Netacea captcha cookie. Name should set so as not to conflict with existing cookies on site.
-  - `timeout` (optional) - the number of milliseconds to wait for a response from the Mitigation API before proceeding to the origin website. Default 3000ms.
+* [KnownUser V3 repository](https://github.com/queueit/KnownUser.V3.Javascript)
+* [KnownUser V4 documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/article_attachments/8583618914076/Queue-it_Cloudflare_V4_Connector_Implementation_Guide.pdf)
+* [Queue-It JavaScript Connector documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/articles/7978446023580-JavaScript-Connector-Version-4-1)
+* [Queue-It general documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/sections/7150475749916-General-Documentation)
 
-## 💻 Development
-If you need to extend or enhance the functionality of the Cloudflare Worker, the documentation can be found [here](https://developers.cloudflare.com/workers/).
-Code extensions should be made in `./src/handler.ts`
-Please ensure that `worker.run(event, originRequest)` and `event.waitUntil(worker.ingest(event.request, response))` are called.
+## Issues
 
-## ✔ Testing
-- `npm run test` - This will run a set of simple method tests against the worker (see `./tests/handler.test.ts`)
-- `npm run dev` - alias for `wrangler dev` - [documentation](https://developers.cloudflare.com/workers/wrangler/commands/#dev).
-- `npm run dev:local` - alias for `wrangler dev --local` - live preview of your code in a cloudflare sandbox - accessible from only your machine.
-
-## ☁ Publishing
-
-The integration must be built with webpack before deployment via wrangler.
-You can do this yourself by running `npm run build`, or use `npm run publish`
-to build with webpack and publish to your Cloudflare distribution in one command.
-
-## ❗ Issues
-If you run into issues with this specific project, please feel free to file an issue [here](https://github.com/Netacea/cloudflare-worker-template-typescript/issues). If the problem is with Wrangler, please file an issue [here](https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler).
+For help with issues, please reach out to the Product Engineering 2 team via `#product-eng-2` channel on Slack.
