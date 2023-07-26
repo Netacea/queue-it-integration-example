@@ -1,10 +1,16 @@
 {
-  "apiKey": "",
-  "secretKey": "=",
-  "mitigationType": "MITIGATE",
-  "cookieEncryptionKey": "",
-  "netaceaCookieName": "_coolCookie",
-  "netaceaCaptchaCookieName": "_captcha",
-  "enableDynamicCaptchaContentType": false,
-  "timeout": 3000
+  "netaceaConfig": {
+    "apiKey": "",
+    "secretKey": "=",
+    "mitigationType": "MITIGATE",
+    "cookieEncryptionKey": "",
+    "netaceaCookieName": "_coolCookie",
+    "netaceaCaptchaCookieName": "_captcha",
+    "enableDynamicCaptchaContentType": false,
+    "timeout": 3000
+  },
+  "queueItConfig": {
+    "secretKey": "",
+    "customerId": ""
+  }
 }

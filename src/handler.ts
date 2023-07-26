@@ -1,7 +1,7 @@
 import Cloudflare, {CloudflareConstructorArgs} from '@netacea/cloudflare'
-import * as NetaceaConfig from './NetaceaConfig.json'
+import * as Config from './NetaceaConfig.json'
 import * as QueueIt from './connector-cloudflare-4.1.1'
-const worker = new Cloudflare(NetaceaConfig as CloudflareConstructorArgs)
+const worker = new Cloudflare(Config.netaceaConfig as CloudflareConstructorArgs)
 
 export async function handleRequestWithNetacea(
   event: FetchEvent
@@ -18,9 +18,11 @@ async function originRequest(request: Request): Promise<Response> {
     return netaceaResponse
   }
 
+  const {queueItConfig} = Config
+
   QueueIt.setIntegrationDetails({
-    SecretKey: 'b5a0224c-82b8-4fe0-8f38-92cb39d319f0f1e786c9-7437-485e-ac90-429eddcd33c7',
-    CustomerId: 'netacea',
+    SecretKey: queueItConfig.secretKey,
+    CustomerId: queueItConfig.customerId,
     EnqueueTokenEnabled: true,
     EnqueueTokenValidityTime: 60000,
     EnqueueTokenKeyEnabled: false,
