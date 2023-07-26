@@ -3,6 +3,8 @@
 This repository contains an example integration of Netacea's bot detection with Queue-It's KnownUser V4 package.
 It is currently deployed in [https://queue.netacea-int.co.uk/](https://queue.netacea-int.co.uk/).
 
+![Queue-It POC Flow](./docs/queue-it-poc-flow.jpg)
+
 ## Installation
 
 To install all dependecies, run `npm ci` in the root level of this repository. Afterwards move to `src/connector-cloudflare-4.1.1`, and run `npm ci` once more to install KnownUser V4 dependencies.
