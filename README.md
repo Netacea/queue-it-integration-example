@@ -26,3 +26,4 @@ Below is a list of useful resources gathered during creation of this integration
 * [KnownUser V4 documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/article_attachments/8583618914076/Queue-it_Cloudflare_V4_Connector_Implementation_Guide.pdf)
 * [Queue-It JavaScript Connector documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/articles/7978446023580-JavaScript-Connector-Version-4-1)
 * [Queue-It general documentation (requires Queue-It login)](https://support.queue-it.com/hc/en-us/sections/7150475749916-General-Documentation)
+
